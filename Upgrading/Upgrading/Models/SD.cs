@@ -9,7 +9,7 @@
         public const string StatuseRejected = "Rejected";
         public const string StatuseApproved = "Approved";
         public const string StatuseWaiting = "WaitingList";
-        public const string StatuseFull = "Full ";
+        public const string StatuseFull = "Full";
        
     }
 }

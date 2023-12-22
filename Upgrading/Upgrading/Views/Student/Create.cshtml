@@ -1,0 +1,129 @@
+﻿@model Upgrading.Models.Student
+
+@{
+    ViewData["Title"] = "Create";
+}
+<hr />
+<div class="container pt-5">
+    <div class="card shadow border">
+        <div class="card-body p-4">
+            <div class="row pt-3">
+                <div class="col-md-12">
+                    <form asp-action="Create" class="row">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                       @*  <div class="form-floating mb-3 col-md-6">
+
+                            <input asp-for="StudentName" class="form-control" />
+                            <label asp-for="StudentName" class="ms-2 text-muted"></label>
+                            <span asp-validation-for="StudentName" class="text-danger"></span>
+                        </div> *@
+                        @* <div class="form-floating mb-3 col-md-6">
+
+                            <input asp-for="StudentSurname" class="form-control" />
+                            <label asp-for="StudentSurname" class="ms-2 text-muted"></label>
+                            <span asp-validation-for="StudentSurname" class="text-danger"></span>
+                        </div> *@
+                        <div class="form-floating mb-3 col-md-6">
+
+                            <input asp-for="StudentIdentityNumber" class="form-control" />
+                            <label asp-for="StudentIdentityNumber" class="ms-2 text-muted"></label>
+                            <span asp-validation-for="StudentIdentityNumber" class="text-danger"></span>
+                        </div>
+                        <div class="form-floating mb-3 col-md-6">
+
+                            <input asp-for="PhoneNumber" class="form-control" />
+                            <label asp-for="PhoneNumber" class="ms-2 text-muted"></label>
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
+                       @*  <div class="form-floating mb-3 col-md-6">
+
+                            <input asp-for="Email" class="form-control" />
+                            <label asp-for="Email" class="ms-2 text-muted"></label>
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div> *@
+                        <div class="form-floating mb-3 col-md-6">
+
+                            <input asp-for="ParentName" class="form-control" />
+                            <label asp-for="ParentName" class="ms-2 text-muted"></label>
+                            <span asp-validation-for="ParentName" class="text-danger"></span>
+                        </div>
+                        <div class="form-floating mb-3 col-md-6">
+
+                            <input asp-for="ParentSurname" class="form-control" />
+                            <label asp-for="ParentSurname" class="ms-2 text-muted"></label>
+                            <span asp-validation-for="ParentSurname" class="text-danger"></span>
+                        </div>
+                        <div class="form-floating mb-3 col-md-6">
+
+                            <input asp-for="ParentPhoneNumber" class="form-control" />
+                            <label asp-for="ParentPhoneNumber" class="ms-2 text-muted"></label>
+                            <span asp-validation-for="ParentPhoneNumber" class="text-danger"></span>
+                        </div>
+                        <div class="form-floating mb-3 col-md-6">
+                            <input asp-for="ParentEmail" class="form-control" />
+                            <label asp-for="ParentEmail" class="ms-2 text-muted"></label>
+                            <span asp-validation-for="ParentEmail" class="text-danger"></span>
+                        </div>
+                        <div class="form-floating mb-3 col-md-6">
+
+                            <input asp-for="Line1" class="form-control" />
+                            <label asp-for="Line1" class="ms-2 text-muted"></label>
+                            <span asp-validation-for="Line1" class="text-danger"></span>
+                        </div>
+                        <div class="form-floating mb-3 col-md-6">
+
+                            <input asp-for="Line2" class="form-control" />
+                            <label asp-for="Line2" class="ms-2 text-muted"></label>
+                            <span asp-validation-for="Line2" class="text-danger"></span>
+                        </div>
+                        <div class="form-floating mb-3 col-md-6">
+
+                            <input asp-for="Line3" class="form-control" />
+                            <label asp-for="Line3" class="ms-2 text-muted"></label>
+                            <span asp-validation-for="Line3" class="text-danger"></span>
+                        </div>
+                        <div class="form-floating mb-3 col-md-6">
+
+                            <input asp-for="Line4" class="form-control" />
+                            <label asp-for="Line4" class="ms-2 text-muted"></label>
+                            <span asp-validation-for="Line4" class="text-danger"></span>
+                        </div>
+                        <div class="form-floating mb-3 col-md-6">
+
+                            <input asp-for="Line5" class="form-control" />
+                            <label asp-for="Line5" class="ms-2 text-muted"></label>
+                            <span asp-validation-for="Line5" class="text-danger"></span>
+                        </div>
+                        <div class="form mb-3 col-md-12">
+                            <select multiple asp-for="@Model.ListOfSubjects" asp-items="ViewBag.Subjects" class="form-select border shadow custom-select-height">
+                                <option disabled selected>--Select Subject--</option>
+                            </select>
+                        </div>
+
+                       @*  <div class="col-6">
+                            <input type="submit" value="Apply" class="w-100 btn btn-lg btn-success" />
+                            <i class="bi bi-x-circle"> Back</i>
+                        </div> *@
+                        <div class="col-6">
+                            <button type="submit" class="btn btn-lg btn-success w-100">
+                                <i class="bi bi-check-circle"> Apply</i>
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <a asp-controller="Student" asp-action="Index" class="w-100 btn btn-lg btn-secondary">
+                                <i class="bi bi-x-circle"> Back</i>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

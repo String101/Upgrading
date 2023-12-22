@@ -1,0 +1,105 @@
+﻿@model IEnumerable<Upgrading.Models.Student>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="w-100 card border-0">
+   
+    <div class="card-body border p-4 col-12">
+       @*  <div class="row pb-3">
+            <div class="col-6 offset-6 text-end">
+                <a asp-controller="Student" asp-action="Create" class="btn btn-secondary">
+                    <i class="bi bi-plus-circle"></i> Add New Student
+                </a>
+            </div>
+        </div> *@
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.StudentId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.StudentName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.StudentSurname)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PhoneNumber)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Status)
+                    </th>
+                   
+                    @* <th>
+                        @Html.DisplayNameFor(model => model.ListOfSubjects)
+                    </th> *@
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StudentId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StudentName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StudentSurname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PhoneNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                        @* <td>
+                            @foreach (var u in item.ListOfSubjects)
+                            {
+                                @Html.DisplayFor(modelItem => u)
+                                <br />
+                                <br />
+                            }
+                        </td> *@
+
+                        <td>
+                        
+                          <a asp-controller="Student" asp-action="Update" asp-route-id="@item.StudentId" class="btn btn-success">
+                                <i class="bi bi-pencil"></i> Update
+                          </a>
+
+                            <a asp-controller="Student" asp-action="Details" asp-route-id="@item.StudentId" class="btn btn-info">
+                                <i class="bi bi-info-lg"></i> Details
+                          </a>
+                           
+                          <a  asp-controller="Student" asp-action="Delete" asp-route-id="@item.StudentId" class="btn btn-danger">
+                                <i class="bi bi-trash"></i> Delete
+                          </a>
+                               
+                           
+                        
+                           @*  <a asp-action="Update" asp-route-id="@item.StudentId">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.StudentId">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.StudentId">Delete</a> *@
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+

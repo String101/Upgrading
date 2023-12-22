@@ -1,0 +1,52 @@
+﻿@model Upgrading.ViewModel.RegisterVM
+
+<div class="container pt-5">
+    <div class="">
+        
+        <div class="">
+            <div class="row pt-3">
+                <div class="col-md-12">
+                    <form class="row" method="post">
+
+                        <div class="form-floating mb-3 col-md-6">
+                            <select class="form-select" asp-for="@Model.Role">
+
+                                <option value="@SD.Role_Admin">@SD.Role_Admin</option>
+                                <option value="@SD.Role_Student">@SD.Role_Student</option>
+                               
+                                <option  selected></option>
+
+                            </select>
+                            <label class="ms-2 text-muted">Role</label>
+                        </div>
+                        <div class="form-floating mb-3 col-md-6">
+                            <input asp-for="@Model.Name" class="form-control" />
+                            <label class="ms-2 text-muted">Name</label>
+                        </div>
+                        <div class="form-floating mb-3 col-md-6">
+                            <input asp-for="@Model.Surname" class="form-control" />
+                            <label class="ms-2 text-muted">Surname</label>
+                        </div>
+                        <div class="form-floating mb-3 col-md-6">
+                            <input asp-for="@Model.Email" class="form-control" aria-required="true" />
+                            <label class="ms-2 text-muted">Email</label>
+                        </div>
+                      
+                        <div class="form-floating mb-3 col-md-6">
+                            <input asp-for="@Model.Password" class="form-control" />
+                            <label class="ms-2 text-muted">Password</label>
+                        </div>
+                        <div class="form-floating mb-3 col-md-6">
+                            <input asp-for="@Model.ConfirmPassword" class="form-control" />
+                            <label class="ms-2 text-muted">Confirm Password</label>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="w-100 btn btn-lg btn-outline-info">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

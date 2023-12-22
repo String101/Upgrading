@@ -1,0 +1,44 @@
+﻿@model Student
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+   
+    
+        <form class="row">
+            <div class="col-12">
+                <div class="p-3">
+                    <div class="form-floating py-2 col-10">
+                        <input asp-for="@Model.StudentId" disabled class="form-control border shadow" />
+                        <label asp-for="StudentId" class="ms-2"></label>
+                    </div>
+                    <div class="form-floating py-2 col-10">
+                        <input asp-for="@Model.StudentName" disabled class="form-control border shadow" />
+                        <label asp-for="StudentName" class="ms-2"></label>
+                    </div>
+                    <div class="form-floating py-2 col-10">
+                        <input asp-for="@Model.StudentSurname" disabled class="form-control border shadow" />
+                        <label asp-for="StudentSurname" class="ms-2"></label>
+                    </div>
+                    <div class="form-floating py-2 col-10">
+                        <input asp-for="@Model.Email" disabled class="form-control border shadow" />
+                        <label asp-for="Email" class="ms-2"></label>
+                    </div>
+                    <div class="form-floating py-2 col-10">
+                        <input asp-for="@Model.PhoneNumber" disabled class="form-control border shadow" />
+                        <label asp-for="PhoneNumber" class="ms-2"></label>
+                    </div>
+                    <div class="form-floating py-2 col-10">
+                            <input asp-for="@Model.Status" disabled class="form-control border shadow" />
+                            <label asp-for="Status" class="ms-2"></label>
+                    </div>
+               </div>
+            </div>
+        </form>
+       
+</div>
+
+
+

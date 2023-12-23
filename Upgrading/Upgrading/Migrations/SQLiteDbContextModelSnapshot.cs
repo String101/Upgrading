@@ -234,6 +234,9 @@ namespace Upgrading.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("IdentityCardUrl")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Line1")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -276,6 +279,9 @@ namespace Upgrading.Migrations
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("StatementUrl")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Status")

@@ -39,17 +39,10 @@
                         <a asp-controller="Subject" asp-action="Update" asp-route-id="@item.SubjectId" class="btn btn-success">
                             <i class="bi bi-pencil"></i> Update
                         </a>
-
-                        <a asp-controller="Subject" asp-action="Details" asp-route-id="@item.SubjectId" class="btn btn-info">
-                            <i class="bi bi-info-lg"></i> Details
-                        </a>
-
                         <a asp-controller="Subject" asp-action="Delete" asp-route-id="@item.SubjectId" class="btn btn-danger">
                             <i class="bi bi-trash"></i> Delete
                         </a>
-                        @* <a asp-action="Update" asp-route-id="@item.SubjectId">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.SubjectId">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.SubjectId">Delete</a> *@
+                       
                     </td>
                 </tr>
             }

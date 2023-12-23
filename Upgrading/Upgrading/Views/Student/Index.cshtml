@@ -36,6 +36,7 @@
                         @Html.DisplayNameFor(model => model.Status)
                     </th>
                    
+                   
                     @* <th>
                         @Html.DisplayNameFor(model => model.ListOfSubjects)
                     </th> *@
@@ -65,6 +66,7 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.Status)
                         </td>
+                     
                         @* <td>
                             @foreach (var u in item.ListOfSubjects)
                             {
@@ -75,7 +77,7 @@
                         </td> *@
 
                         <td>
-                        
+                        <input asp-for="@item.IdentityCardUrl" hidden />
                           <a asp-controller="Student" asp-action="Update" asp-route-id="@item.StudentId" class="btn btn-success">
                                 <i class="bi bi-pencil"></i> Update
                           </a>
@@ -87,8 +89,9 @@
                           <a  asp-controller="Student" asp-action="Delete" asp-route-id="@item.StudentId" class="btn btn-danger">
                                 <i class="bi bi-trash"></i> Delete
                           </a>
-                               
-                           
+
+                       
+                        
                         
                            @*  <a asp-action="Update" asp-route-id="@item.StudentId">Edit</a> |
                             <a asp-action="Details" asp-route-id="@item.StudentId">Details</a> |

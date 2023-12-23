@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Upgrading.Models
@@ -7,16 +8,28 @@ namespace Upgrading.Models
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Display(Name = "Student Number")]
+        [ValidateNever]
         public string StudentId { get; set; }
         [Display(Name ="Name")]
+        [ValidateNever]
         public string StudentName { get; set; }
         [Display(Name = "Surname")]
+        [ValidateNever]
         public string StudentSurname { get; set; }
         [Display(Name = "Identity Number")]
         public string StudentIdentityNumber { get; set; }
+        [NotMapped]
+        public IFormFile? StudentIdentityCard { get; set; }
+        [NotMapped]
+        public IFormFile? MatricStatement { get; set; }
+        [Display(Name = "IdentityCard ")]
+        public string? IdentityCardUrl { get; set; }
+        [Display(Name = "Statement")]
+        public string? StatementUrl { get; set; }
         [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
         [Display(Name = "Email")]
+        [ValidateNever]
         public string Email {  get; set; }
         [Display(Name = "Guardian Name")]
         public string ParentName { get; set; }

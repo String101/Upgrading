@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Security;
+using Microsoft.AspNetCore.Hosting;
 
 namespace Upgrading.Controllers
 {
@@ -12,17 +13,18 @@ namespace Upgrading.Controllers
         private readonly IStudent _student;
         private readonly ISubject _subject;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly UserManager<ApplicationUser> _usermanager;
         private readonly SignInManager<ApplicationUser> _signinManager;
 
-        public StudentController(IStudent student, ISubject subject,SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> usermanager,IUnitOfWork unitOfWork)
+        public StudentController(IStudent student, ISubject subject,SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> usermanager,IUnitOfWork unitOfWork,IWebHostEnvironment webHostEnvironment)
         {
             _student = student;
             _subject = subject;
             _signinManager = signInManager;
             _usermanager = usermanager;
             _unitOfWork = unitOfWork;
-            
+            _webHostEnvironment = webHostEnvironment;
         }
 
         public IActionResult Index()
@@ -70,16 +72,45 @@ namespace Upgrading.Controllers
         public IActionResult Create(Student student)
         {
             var username = _usermanager.GetUserName(User);
+            if (ModelState.IsValid)
+            {
+                if(student.StudentIdentityCard!=null)
+                {
+                    string filename = Guid.NewGuid().ToString() + Path.GetExtension(student.StudentIdentityCard.FileName);
+                    string imagePath = Path.Combine(_webHostEnvironment.WebRootPath, @"ids\studentsIdCopy");
 
-            ApplicationUser user = _unitOfWork.User.Get(x => x.UserName == username);
-            student.StudentId= $"{DateTime.Now.Year}" + new Random().Next(100) + $"{DateTime.Now.Day}" + new Random().Next(9);
-            user.StudentId= student.StudentId;
-            student.StudentName=user.StudentName;
-            student.StudentSurname=user.StudentSurname;
-            student.Email=user.Email;
-            _student.Add(student);
-            _student.Save();
-            return RedirectToAction(nameof(Index));
+                    using var fileStream = new FileStream(Path.Combine(imagePath, filename), FileMode.Create);
+                   student.StudentIdentityCard.CopyTo(fileStream);
+
+                    student.IdentityCardUrl = @"\ids\studentsIdCopy\" + filename;
+                }
+                if(student.MatricStatement!=null)
+                {
+                    string filename = Guid.NewGuid().ToString() + Path.GetExtension(student.MatricStatement.FileName);
+                    string statementPath = Path.Combine(_webHostEnvironment.WebRootPath, @"statements\ApplicantsMatricStatement");
+
+                    using var fileStream = new FileStream(Path.Combine(statementPath, filename), FileMode.Create);
+                    student.MatricStatement.CopyTo(fileStream);
+
+                    student.StatementUrl = @"\statements\ApplicantsMatricStatement\" + filename;
+
+                }
+                ApplicationUser user = _unitOfWork.User.Get(x => x.UserName == username);
+                student.StudentId = $"{DateTime.Now.Year}" + new Random().Next(100) + $"{DateTime.Now.Day}" + new Random().Next(9);
+                user.StudentId = student.StudentId;
+                student.StudentName = user.StudentName;
+                student.StudentSurname = user.StudentSurname;
+                student.Email = user.Email;
+                _student.Add(student);
+                _student.Save();
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                return View();
+            }
+
+            
         }
        
         [HttpGet]
@@ -128,7 +159,27 @@ namespace Upgrading.Controllers
         [HttpPost]
         public IActionResult Delete(Student student)
         {
-            _student.Remove(student);
+            Student? objFromDb = _student.Get(u => u.StudentId == student.StudentId);
+            if(objFromDb is not null)
+            {
+                if (!string.IsNullOrEmpty(objFromDb.IdentityCardUrl))
+                {
+                    var oldIDPath = Path.Combine(_webHostEnvironment.WebRootPath, objFromDb.IdentityCardUrl.TrimStart('\\'));
+                    if (System.IO.File.Exists(oldIDPath))
+                    {
+                        System.IO.File.Delete(oldIDPath);
+                    }
+                }
+                if (!string.IsNullOrEmpty(objFromDb.StatementUrl))
+                {
+                    var oldIDPath = Path.Combine(_webHostEnvironment.WebRootPath, objFromDb.StatementUrl.TrimStart('\\'));
+                    if (System.IO.File.Exists(oldIDPath))
+                    {
+                        System.IO.File.Delete(oldIDPath);
+                    }
+                }
+            }
+            _student.Remove(objFromDb);
             _student.Save();
             return RedirectToAction(nameof(Index));
         }

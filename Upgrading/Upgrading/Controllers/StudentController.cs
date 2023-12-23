@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Security;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.StaticFiles;
 
 namespace Upgrading.Controllers
 {
@@ -182,6 +183,62 @@ namespace Upgrading.Controllers
             _student.Remove(objFromDb);
             _student.Save();
             return RedirectToAction(nameof(Index));
+        }
+      public IActionResult DownloadID(Student student)
+      {
+            Student? objFromDb = _student.Get(u => u.StudentId == student.StudentId);
+            if(objFromDb is not null)
+            {
+                if(!string.IsNullOrEmpty(objFromDb.IdentityCardUrl))
+                {
+                    var oldIDPath = Path.Combine(_webHostEnvironment.WebRootPath, objFromDb.IdentityCardUrl.TrimStart('\\'));
+                    if (System.IO.File.Exists(oldIDPath))
+                    {
+                        byte[] fileBytes = System.IO.File.ReadAllBytes(oldIDPath);
+                        string contentType = "application/octet-stream";
+                        return File(fileBytes, contentType, oldIDPath);
+                    }
+                }
+                else
+                {
+                    // If the file doesn't exist, return a 404 Not Found response
+                    return NotFound();
+                }
+            }
+            else
+            {
+                return View();
+            }
+            return View();
+
+      }
+        public IActionResult DownloadStatement(Student student)
+        {
+            Student? objFromDb = _student.Get(u => u.StudentId == student.StudentId);
+            if (objFromDb is not null)
+            {
+                if (!string.IsNullOrEmpty(objFromDb.StatementUrl))
+                {
+                    var oldIDPath = Path.Combine(_webHostEnvironment.WebRootPath, objFromDb.StatementUrl.TrimStart('\\'));
+                    if (System.IO.File.Exists(oldIDPath))
+                    {
+                        byte[] fileBytes = System.IO.File.ReadAllBytes(oldIDPath);
+                        string contentType = "application/octet-stream";
+                        return File(fileBytes, contentType, oldIDPath);
+                    }
+                }
+                else
+                {
+                    // If the file doesn't exist, return a 404 Not Found response
+                    return NotFound();
+                }
+            }
+            else
+            {
+                return View();
+            }
+            return View();
+
         }
     }
 }

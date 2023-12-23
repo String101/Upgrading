@@ -13,7 +13,8 @@
         <form asp-action="Update">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="StudentId" />
-            
+            <input type="hidden" asp-for="IdentityCardUrl" />
+            <input type="hidden" asp-for="StatementUrl" />
             <div class="form-group">
                 <label asp-for="StudentName" class="control-label"></label>
                 <input asp-for="StudentName" class="form-control" />

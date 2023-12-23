@@ -107,7 +107,18 @@
        
     </dl>
 </div>
-<div>
-    <a asp-action="Update" asp-route-id="@Model?.StudentId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+
+
+    <form>
+        <input type="hidden" asp-for="StudentId" />
+        <input type="hidden" asp-for="IdentityCardUrl" />
+        <button type="submit" asp-controller="Student" asp-action="DownloadID" class="btn btn-danger">
+        <i class="bi bi-download"></i> Id Copy
+        </button>
+
+        <button type="submit" asp-controller="Student" asp-action="DownloadStatement" class="btn btn-danger">
+        <i class="bi bi-download"></i> Matric Statement
+        </button>
+    </form>
+   
+

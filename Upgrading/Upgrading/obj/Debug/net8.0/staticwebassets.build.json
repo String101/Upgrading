@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ZsdkxIr1XnMQbLZ/kdWvNAoxiRlm0tZTtS7yX2CC5gA=",
+  "Hash": "SMufFbSxM/kLul1oK+VmUXlM1Jh7Ws3U3swpoz+Dbbk=",
   "Source": "Upgrading",
   "BasePath": "_content/Upgrading",
   "Mode": "Default",
@@ -16,6 +16,44 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\thusi\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.0\\staticwebassets\\Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css",
+      "SourceId": "Microsoft.AspNetCore.Components.QuickGrid",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\thusi\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.0\\staticwebassets\\",
+      "BasePath": "_content/Microsoft.AspNetCore.Components.QuickGrid",
+      "RelativePath": "Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\thusi\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.0\\staticwebassets\\Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\thusi\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.0\\staticwebassets\\QuickGrid.razor.js",
+      "SourceId": "Microsoft.AspNetCore.Components.QuickGrid",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\thusi\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.0\\staticwebassets\\",
+      "BasePath": "_content/Microsoft.AspNetCore.Components.QuickGrid",
+      "RelativePath": "QuickGrid.razor.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\thusi\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.0\\staticwebassets\\QuickGrid.razor.js"
+    },
     {
       "Identity": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Upgrading.styles.css",
       "SourceId": "Upgrading",
@@ -93,12 +131,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\ids\\studentsIdCopy\\4b7953b9-0637-4ddb-b96d-95c4a1da96a0.pdf",
+      "Identity": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\ids\\studentsIdCopy\\7073ca89-fa62-4cb2-861a-4f8e125fcb7c.pdf",
       "SourceId": "Upgrading",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\",
       "BasePath": "_content/Upgrading",
-      "RelativePath": "ids/studentsIdCopy/4b7953b9-0637-4ddb-b96d-95c4a1da96a0.pdf",
+      "RelativePath": "ids/studentsIdCopy/7073ca89-fa62-4cb2-861a-4f8e125fcb7c.pdf",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -109,26 +147,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\ids\\studentsIdCopy\\4b7953b9-0637-4ddb-b96d-95c4a1da96a0.pdf"
-    },
-    {
-      "Identity": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\ids\\studentsIdCopy\\f49bfb95-0e88-4361-bdbc-a02aa07c40f6.pdf",
-      "SourceId": "Upgrading",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\",
-      "BasePath": "_content/Upgrading",
-      "RelativePath": "ids/studentsIdCopy/f49bfb95-0e88-4361-bdbc-a02aa07c40f6.pdf",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\ids\\studentsIdCopy\\f49bfb95-0e88-4361-bdbc-a02aa07c40f6.pdf"
+      "OriginalItemSpec": "wwwroot\\ids\\studentsIdCopy\\7073ca89-fa62-4cb2-861a-4f8e125fcb7c.pdf"
     },
     {
       "Identity": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\images\\logo.jpg",
@@ -1252,12 +1271,12 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\statements\\ApplicantsMatricStatement\\7f26ab2a-32f7-4417-a354-95f1942e3b97.pdf",
+      "Identity": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\statements\\ApplicantsMatricStatement\\3e917996-d779-48bf-a5e2-2ff3a0b3a777.pdf",
       "SourceId": "Upgrading",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\",
       "BasePath": "_content/Upgrading",
-      "RelativePath": "statements/ApplicantsMatricStatement/7f26ab2a-32f7-4417-a354-95f1942e3b97.pdf",
+      "RelativePath": "statements/ApplicantsMatricStatement/3e917996-d779-48bf-a5e2-2ff3a0b3a777.pdf",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1268,26 +1287,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\statements\\ApplicantsMatricStatement\\7f26ab2a-32f7-4417-a354-95f1942e3b97.pdf"
-    },
-    {
-      "Identity": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\statements\\ApplicantsMatricStatement\\e0382c1c-4873-47b5-ad20-71c51360aa63.pdf",
-      "SourceId": "Upgrading",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\",
-      "BasePath": "_content/Upgrading",
-      "RelativePath": "statements/ApplicantsMatricStatement/e0382c1c-4873-47b5-ad20-71c51360aa63.pdf",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\statements\\ApplicantsMatricStatement\\e0382c1c-4873-47b5-ad20-71c51360aa63.pdf"
+      "OriginalItemSpec": "wwwroot\\statements\\ApplicantsMatricStatement\\3e917996-d779-48bf-a5e2-2ff3a0b3a777.pdf"
     }
   ]
 }

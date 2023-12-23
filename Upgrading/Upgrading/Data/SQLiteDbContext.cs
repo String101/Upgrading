@@ -12,7 +12,8 @@ namespace Upgrading.Data
         }
         public DbSet<Subjects> Subjects { get; set; }
         public DbSet<Student> Students { get; set; }  
-        public DbSet<ApplicationUser> ApplicationUsers { get; set; }    
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; } 
+        public DbSet<Announcement> Announcements { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

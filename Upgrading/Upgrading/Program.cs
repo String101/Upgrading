@@ -13,6 +13,7 @@ builder.Services.AddDbContext<SQLiteDbContext>(option => option.UseSqlite(builde
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<SQLiteDbContext>().AddDefaultTokenProviders();
 
 builder.Services.AddScoped<ISubject, SubjectRepo>();
+builder.Services.AddScoped<IAnnouncement, AnnouncementRepo>();
 builder.Services.AddScoped<IStudent, StudentRepo>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 

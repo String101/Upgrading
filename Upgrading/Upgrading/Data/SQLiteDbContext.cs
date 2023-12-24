@@ -14,49 +14,12 @@ namespace Upgrading.Data
         public DbSet<Student> Students { get; set; }  
         public DbSet<ApplicationUser> ApplicationUsers { get; set; } 
         public DbSet<Announcement> Announcements { get; set; }
+        public DbSet<Products> Products { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            //modelBuilder.Entity<Student>().HasData(
-                
-            //    new Student
-            //    {
-            //        StudentId=1,
-            //        StudentName="Sbongakonke",
-            //        Subjects = [
-            //         new Subjects
-            //         {
-            //            SubjectId = 1,
-            //            SubjectName = "Geography"
-            //          },
-            //            new Subjects
-            //            {
-            //                SubjectId = 3,
-            //                SubjectName = "Physical Sciences"
-            //            },
-
-            //        ]
-            //    }
-            //    );
-
-            //modelBuilder.Entity<Subjects>().HasData(
-            //    new Subjects
-            //    {
-            //        SubjectId=1,
-            //        SubjectName="Geography"
-            //    },
-            //     new Subjects
-            //     {
-            //         SubjectId = 2,
-            //         SubjectName = "Accounting"
-            //     },
-            //      new Subjects
-            //      {
-            //          SubjectId = 3,
-            //          SubjectName = "Physical Sciences"
-            //      }
-            //    );
+            
         }
     }
 }

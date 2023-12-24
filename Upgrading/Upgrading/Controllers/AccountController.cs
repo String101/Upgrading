@@ -76,11 +76,7 @@ namespace Upgrading.Controllers
         [HttpGet]
         public IActionResult Register()
         {
-            if (!_roleManager.RoleExistsAsync(SD.Role_Admin).GetAwaiter().GetResult())
-            {
-                _roleManager.CreateAsync(new IdentityRole(SD.Role_Admin)).Wait();
-                _roleManager.CreateAsync(new IdentityRole(SD.Role_Student)).Wait();
-            }
+            
             return View();
         }
         [HttpPost]
@@ -96,19 +92,14 @@ namespace Upgrading.Controllers
                     StudentSurname=registerVM.Surname,
                     EmailConfirmed=true,
                     NormalizedEmail=registerVM.Email,
-                    Role=registerVM.Role,
+                   
                 };
                 var result = await _usermanager.CreateAsync(user, registerVM.Password);
                 if (result.Succeeded)
                 {
-                    if (!string.IsNullOrEmpty(registerVM.Role))
-                    {
-                        await _usermanager.AddToRoleAsync(user, registerVM.Role);
-                    }
-                    else
-                    {
-                        await _usermanager.AddToRoleAsync(user, SD.Role_Student);
-                    }
+              
+                     await _usermanager.AddToRoleAsync(user, SD.Role_Student);
+            
 
                     await _signinManager.SignInAsync(user, isPersistent: false);
                     if (string.IsNullOrEmpty(registerVM.RedirectUrl))

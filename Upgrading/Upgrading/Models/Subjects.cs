@@ -7,7 +7,7 @@ namespace Upgrading.Models
     public class Subjects
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public string  SubjectId {get;set;}
-        public string SubjectName { get;set;}
+        public string  SubjectId {get;set;} = string.Empty;
+        public string SubjectName { get;set;} = string.Empty;
     }
 }

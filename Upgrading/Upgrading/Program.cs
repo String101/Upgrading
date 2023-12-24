@@ -9,13 +9,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<SQLiteDbContext>(option => option.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<SQLiteDbContext>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<SQLiteDbContext>().AddDefaultTokenProviders();
 
-builder.Services.AddScoped<ISubject, SubjectRepo>();
-builder.Services.AddScoped<IAnnouncement, AnnouncementRepo>();
-builder.Services.AddScoped<IStudent, StudentRepo>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IDbInitializer, DbInitializer>();
 
 var app = builder.Build();
 
@@ -34,8 +32,18 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+SeedData();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+void SeedData()
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var dbInitializer= scope.ServiceProvider.GetRequiredService<IDbInitializer>();
+        dbInitializer.Initialize();
+    }
+}

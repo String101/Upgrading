@@ -6,22 +6,22 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Security;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.StaticFiles;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Upgrading.Controllers
 {
+    [Authorize]
     public class StudentController : Controller
     {
-        private readonly IStudent _student;
-        private readonly ISubject _subject;
+       
         private readonly IUnitOfWork _unitOfWork;
         private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly UserManager<ApplicationUser> _usermanager;
         private readonly SignInManager<ApplicationUser> _signinManager;
 
-        public StudentController(IStudent student, ISubject subject,SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> usermanager,IUnitOfWork unitOfWork,IWebHostEnvironment webHostEnvironment)
+        public StudentController(SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> usermanager,IUnitOfWork unitOfWork,IWebHostEnvironment webHostEnvironment)
         {
-            _student = student;
-            _subject = subject;
+           
             _signinManager = signInManager;
             _usermanager = usermanager;
             _unitOfWork = unitOfWork;
@@ -33,15 +33,15 @@ namespace Upgrading.Controllers
             var username = _usermanager.GetUserName(User);
 
             ApplicationUser user = _unitOfWork.User.Get(x => x.UserName == username);
-            if(user.Role==SD.Role_Admin)
+            if(User.IsInRole(SD.Role_Admin))
             {
-                var students = _student.GetAll();
+                var students = _unitOfWork.Student.GetAll();
                 return View(students);
             }
             else
             {
 
-                var students = _student.Get(u => u.StudentId == user.StudentId);
+                var students = _unitOfWork.Student.Get(u => u.StudentId == user.StudentId);
                 if(students==null)
                 {
                     return RedirectToAction("Create", "Student");
@@ -60,7 +60,7 @@ namespace Upgrading.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            IEnumerable<SelectListItem> sub = _subject.GetAll().Select(u => new SelectListItem
+            IEnumerable<SelectListItem> sub = _unitOfWork.Subject.GetAll().Select(u => new SelectListItem
             {
                 Value=u.SubjectName,
                 Text=u.SubjectName
@@ -99,11 +99,12 @@ namespace Upgrading.Controllers
                 ApplicationUser user = _unitOfWork.User.Get(x => x.UserName == username);
                 student.StudentId = $"{DateTime.Now.Year}" + new Random().Next(100) + $"{DateTime.Now.Day}" + new Random().Next(9);
                 user.StudentId = student.StudentId;
+                user.PhoneNumber= student.PhoneNumber;
                 student.StudentName = user.StudentName;
                 student.StudentSurname = user.StudentSurname;
                 student.Email = user.Email;
-                _student.Add(student);
-                _student.Save();
+                _unitOfWork.Student.Add(student);
+                _unitOfWork.Save();
                 return RedirectToAction(nameof(Index));
             }
             else
@@ -115,9 +116,10 @@ namespace Upgrading.Controllers
         }
        
         [HttpGet]
+        [Authorize(Roles = SD.Role_Admin)]
         public IActionResult Details(string id)
         {
-            var student = _student.Get(u => u.StudentId == id);
+            var student = _unitOfWork.Student.Get(u => u.StudentId == id);
             return View(student);
         }
         public ICollection<Subjects> GetSubjectById(List<string> id)
@@ -125,16 +127,18 @@ namespace Upgrading.Controllers
             List<Subjects> subjects=new List<Subjects>();
             foreach(var idItem in id)
             {
-                Subjects subjects1=_subject.Get(u=>u.SubjectId == idItem);
+                Subjects subjects1=
+                    _unitOfWork.Subject.Get(u=>u.SubjectId == idItem);
                 subjects.Add(subjects1);
             }
            return subjects;
         }
         [HttpGet]
+        [Authorize(Roles = SD.Role_Admin)]
         public IActionResult Update(string id)
         {
-            var subject = _student.Get(u => u.StudentId == id) ;
-            IEnumerable<SelectListItem> sub = _subject.GetAll().Select(u => new SelectListItem
+            var subject = _unitOfWork.Student.Get(u => u.StudentId == id) ;
+            IEnumerable<SelectListItem> sub = _unitOfWork.Subject.GetAll().Select(u => new SelectListItem
             {
                 Value = u.SubjectName,
                 Text = u.SubjectName
@@ -144,23 +148,26 @@ namespace Upgrading.Controllers
             return View(subject);
         }
         [HttpPost]
+        [Authorize(Roles = SD.Role_Admin)]
         public IActionResult Update(Student student)
         {
 
-            _student.Update(student);
-            _student.Save();
+            _unitOfWork.Student.Update(student);
+            _unitOfWork.Save();
             return RedirectToAction(nameof(Index));
         }
         [HttpGet]
+        [Authorize(Roles = SD.Role_Admin)]
         public IActionResult Delete(string id)
         {
-            var student = _student.Get(u => u.StudentId == id);
+            var student = _unitOfWork.Student.Get(u => u.StudentId == id);
             return View(student);
         }
         [HttpPost]
+        [Authorize(Roles = SD.Role_Admin)]
         public IActionResult Delete(Student student)
         {
-            Student? objFromDb = _student.Get(u => u.StudentId == student.StudentId);
+            Student? objFromDb = _unitOfWork.Student.Get(u => u.StudentId == student.StudentId);
             if(objFromDb is not null)
             {
                 if (!string.IsNullOrEmpty(objFromDb.IdentityCardUrl))
@@ -180,13 +187,14 @@ namespace Upgrading.Controllers
                     }
                 }
             }
-            _student.Remove(objFromDb);
-            _student.Save();
+            _unitOfWork.Student.Remove(objFromDb);
+            _unitOfWork.Save();
             return RedirectToAction(nameof(Index));
         }
-      public IActionResult DownloadID(Student student)
+        [Authorize(Roles = SD.Role_Admin)]
+        public IActionResult DownloadID(Student student)
       {
-            Student? objFromDb = _student.Get(u => u.StudentId == student.StudentId);
+            Student? objFromDb = _unitOfWork.Student.Get(u => u.StudentId == student.StudentId);
             if(objFromDb is not null)
             {
                 if(!string.IsNullOrEmpty(objFromDb.IdentityCardUrl))
@@ -207,24 +215,25 @@ namespace Upgrading.Controllers
             }
             else
             {
-                return View();
+                return RedirectToAction(nameof(Index));
             }
-            return View();
+            return RedirectToAction(nameof(Index));
 
-      }
+        }
+        [Authorize(Roles = SD.Role_Admin)]
         public IActionResult DownloadStatement(Student student)
         {
-            Student? objFromDb = _student.Get(u => u.StudentId == student.StudentId);
+            Student? objFromDb = _unitOfWork.Student.Get(u => u.StudentId == student.StudentId);
             if (objFromDb is not null)
             {
                 if (!string.IsNullOrEmpty(objFromDb.StatementUrl))
                 {
-                    var oldIDPath = Path.Combine(_webHostEnvironment.WebRootPath, objFromDb.StatementUrl.TrimStart('\\'));
-                    if (System.IO.File.Exists(oldIDPath))
+                    var oldMatricPath = Path.Combine(_webHostEnvironment.WebRootPath, objFromDb.StatementUrl.TrimStart('\\'));
+                    if (System.IO.File.Exists(oldMatricPath))
                     {
-                        byte[] fileBytes = System.IO.File.ReadAllBytes(oldIDPath);
+                        byte[] fileBytes = System.IO.File.ReadAllBytes(oldMatricPath);
                         string contentType = "application/octet-stream";
-                        return File(fileBytes, contentType, oldIDPath);
+                        return File(fileBytes, contentType, oldMatricPath);
                     }
                 }
                 else
@@ -235,9 +244,9 @@ namespace Upgrading.Controllers
             }
             else
             {
-                return View();
+                return RedirectToAction(nameof(Index));
             }
-            return View();
+            return RedirectToAction(nameof(Index));
 
         }
     }

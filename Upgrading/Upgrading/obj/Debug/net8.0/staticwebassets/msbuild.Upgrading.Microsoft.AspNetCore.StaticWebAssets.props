@@ -32,12 +32,12 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\ids\studentsIdCopy\7073ca89-fa62-4cb2-861a-4f8e125fcb7c.pdf))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\ids\studentsIdCopy\c06eb5ed-e0fe-42a8-981a-0c0c30244c9a.pdf))">
       <SourceType>Package</SourceType>
       <SourceId>Upgrading</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Upgrading</BasePath>
-      <RelativePath>ids/studentsIdCopy/7073ca89-fa62-4cb2-861a-4f8e125fcb7c.pdf</RelativePath>
+      <RelativePath>ids/studentsIdCopy/c06eb5ed-e0fe-42a8-981a-0c0c30244c9a.pdf</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -46,7 +46,23 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\ids\studentsIdCopy\7073ca89-fa62-4cb2-861a-4f8e125fcb7c.pdf))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\ids\studentsIdCopy\c06eb5ed-e0fe-42a8-981a-0c0c30244c9a.pdf))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\ids\studentsIdCopy\e1908b5f-05c5-47ea-b553-3713c67fb78a.pdf))">
+      <SourceType>Package</SourceType>
+      <SourceId>Upgrading</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Upgrading</BasePath>
+      <RelativePath>ids/studentsIdCopy/e1908b5f-05c5-47ea-b553-3713c67fb78a.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\ids\studentsIdCopy\e1908b5f-05c5-47ea-b553-3713c67fb78a.pdf))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\logo.jpg))">
       <SourceType>Package</SourceType>
@@ -992,12 +1008,12 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery\LICENSE.txt))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\statements\ApplicantsMatricStatement\3e917996-d779-48bf-a5e2-2ff3a0b3a777.pdf))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\statements\ApplicantsMatricStatement\498ec2f3-d6c3-4ad3-87d5-4a93c32edf4f.pdf))">
       <SourceType>Package</SourceType>
       <SourceId>Upgrading</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Upgrading</BasePath>
-      <RelativePath>statements/ApplicantsMatricStatement/3e917996-d779-48bf-a5e2-2ff3a0b3a777.pdf</RelativePath>
+      <RelativePath>statements/ApplicantsMatricStatement/498ec2f3-d6c3-4ad3-87d5-4a93c32edf4f.pdf</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -1006,7 +1022,23 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\statements\ApplicantsMatricStatement\3e917996-d779-48bf-a5e2-2ff3a0b3a777.pdf))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\statements\ApplicantsMatricStatement\498ec2f3-d6c3-4ad3-87d5-4a93c32edf4f.pdf))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\statements\ApplicantsMatricStatement\d20ccc2b-d969-41a8-868c-d4044c9f9409.pdf))">
+      <SourceType>Package</SourceType>
+      <SourceId>Upgrading</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Upgrading</BasePath>
+      <RelativePath>statements/ApplicantsMatricStatement/d20ccc2b-d969-41a8-868c-d4044c9f9409.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\statements\ApplicantsMatricStatement\d20ccc2b-d969-41a8-868c-d4044c9f9409.pdf))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Upgrading.bundle.scp.css))">
       <SourceType>Package</SourceType>

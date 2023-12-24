@@ -12,8 +12,6 @@ namespace Upgrading.ViewModel
         [Required]
         public string Surname { get; set; }
         [Required]
-        public string Role { get; set; }
-        [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
         [Required]

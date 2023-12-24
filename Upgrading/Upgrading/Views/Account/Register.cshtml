@@ -7,18 +7,6 @@
             <div class="row pt-3">
                 <div class="col-md-12">
                     <form class="row" method="post">
-
-                        <div class="form-floating mb-3 col-md-6">
-                            <select class="form-select" asp-for="@Model.Role">
-
-                                <option value="@SD.Role_Admin">@SD.Role_Admin</option>
-                                <option value="@SD.Role_Student">@SD.Role_Student</option>
-                               
-                                <option  selected></option>
-
-                            </select>
-                            <label class="ms-2 text-muted">Role</label>
-                        </div>
                         <div class="form-floating mb-3 col-md-6">
                             <input asp-for="@Model.Name" class="form-control" />
                             <label class="ms-2 text-muted">Name</label>

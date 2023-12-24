@@ -12,6 +12,5 @@ namespace Upgrading.Models
         [Display(Name = "Learner Email")]
         public string Email { get; set; }
         public string? StudentId { get; set; }
-        public string Role {  get; set; }
     }
 }

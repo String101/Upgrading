@@ -13,8 +13,12 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\ids\\studentsIdCopy\\7073ca89-fa62-4cb2-861a-4f8e125fcb7c.pdf",
-      "PackagePath": "staticwebassets\\ids\\studentsIdCopy\\7073ca89-fa62-4cb2-861a-4f8e125fcb7c.pdf"
+      "Id": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\ids\\studentsIdCopy\\c06eb5ed-e0fe-42a8-981a-0c0c30244c9a.pdf",
+      "PackagePath": "staticwebassets\\ids\\studentsIdCopy\\c06eb5ed-e0fe-42a8-981a-0c0c30244c9a.pdf"
+    },
+    {
+      "Id": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\ids\\studentsIdCopy\\e1908b5f-05c5-47ea-b553-3713c67fb78a.pdf",
+      "PackagePath": "staticwebassets\\ids\\studentsIdCopy\\e1908b5f-05c5-47ea-b553-3713c67fb78a.pdf"
     },
     {
       "Id": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\images\\logo.jpg",
@@ -253,8 +257,12 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\statements\\ApplicantsMatricStatement\\3e917996-d779-48bf-a5e2-2ff3a0b3a777.pdf",
-      "PackagePath": "staticwebassets\\statements\\ApplicantsMatricStatement\\3e917996-d779-48bf-a5e2-2ff3a0b3a777.pdf"
+      "Id": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\statements\\ApplicantsMatricStatement\\498ec2f3-d6c3-4ad3-87d5-4a93c32edf4f.pdf",
+      "PackagePath": "staticwebassets\\statements\\ApplicantsMatricStatement\\498ec2f3-d6c3-4ad3-87d5-4a93c32edf4f.pdf"
+    },
+    {
+      "Id": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\statements\\ApplicantsMatricStatement\\d20ccc2b-d969-41a8-868c-d4044c9f9409.pdf",
+      "PackagePath": "staticwebassets\\statements\\ApplicantsMatricStatement\\d20ccc2b-d969-41a8-868c-d4044c9f9409.pdf"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Upgrading.Microsoft.AspNetCore.StaticWebAssets.props",

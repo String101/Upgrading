@@ -5,57 +5,63 @@ using Upgrading.Models;
 
 namespace Upgrading.Controllers
 {
-    [Authorize]
+  
     public class AnnouncementController : Controller
     {
 
-        private readonly IAnnouncement _announcement;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public AnnouncementController(IAnnouncement announcement)
+        public AnnouncementController(IUnitOfWork unitOfWork)
         {
-            _announcement = announcement;
+            _unitOfWork = unitOfWork;
         }
         public IActionResult Index()
         {
-            IEnumerable<Announcement> announcements = _announcement.GetAll();
+            IEnumerable<Announcement> announcements = _unitOfWork.Announcement.GetAll();
             return View(announcements);
         }
         [HttpGet]
+        [Authorize(Roles =SD.Role_Admin)]
         public IActionResult Create()
         {
             return View();
         }
         [HttpPost]
+        [Authorize(Roles = SD.Role_Admin)]
         public IActionResult Create(Announcement announcement)
         {
-            _announcement.Add(announcement);
-            _announcement.Save();
+            _unitOfWork.Announcement.Add(announcement);
+            _unitOfWork.Save();
             return RedirectToAction(nameof(Index));
         }
         [HttpGet]
+        [Authorize(Roles = SD.Role_Admin)]
         public IActionResult Update(int id)
         {
-            Announcement announcement =_announcement.Get(u=>u.Id == id);
+            Announcement announcement =_unitOfWork.Announcement.Get(u=>u.Id == id);
             return View(announcement);
         }
         [HttpPost]
+        [Authorize(Roles = SD.Role_Admin)]
         public IActionResult Update(Announcement announcement)
         {
-           _announcement.Update(announcement);
-            _announcement.Save();
+           _unitOfWork.Announcement.Update(announcement);
+            _unitOfWork.Save();
             return RedirectToAction(nameof(Index));
         }
         [HttpGet]
+        [Authorize(Roles = SD.Role_Admin)]
         public IActionResult Delete(int id)
         {
-            Announcement announcement = _announcement.Get(u => u.Id == id);
+            Announcement announcement = _unitOfWork.Announcement.Get(u => u.Id == id);
             return View(announcement);
         }
         [HttpPost]
+        [Authorize(Roles = SD.Role_Admin)]
         public IActionResult Delete(Announcement announcement)
         {
-            _announcement.Remove(announcement);
-            _announcement.Save();
+            _unitOfWork.Announcement.Remove(announcement);
+            _unitOfWork.Save();
             return RedirectToAction(nameof(Index));
         }
     }

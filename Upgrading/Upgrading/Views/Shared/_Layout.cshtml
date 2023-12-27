@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="~/Upgrading.styles.css" asp-append-version="true" />
+   
 </head>
 <body>
     <header>
@@ -31,21 +33,40 @@
                         {
                             @if(User.IsInRole(SD.Role_Admin))
                             {
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Subject" asp-action="Index">Subjects</a>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Menu
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" asp-area="" asp-controller="Subject" asp-action="Index">Subjects</a>
+                                        <a class="dropdown-item" asp-area="" asp-controller="Student" asp-action="Index">Applications</a>
+                                        <a class="dropdown-item" asp-area="" asp-controller="Student" asp-action="AcceptedStudent">Enrolled Students</a>
+                                        <a class="dropdown-item" asp-area="" asp-controller="Announcement" asp-action="Index">Announcements</a>
+                                        <a class="dropdown-item" asp-area="" asp-controller="Product" asp-action="Index">Uniform</a>
+                                        <a class="dropdown-item" asp-area="" asp-controller="Registration" asp-action="Index">Registered Student</a>
+                                        <a class="dropdown-item" asp-area="" asp-controller="Student" asp-action="ListTimetable">TimeTable</a>
+                                    </div>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Student" asp-action="Index">Student</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Announcement" asp-action="Index">Announcements</a>
-                                </li>
+                                
                             }
                             else
                             {
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Student" asp-action="Index">Applications</a>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Applications
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" asp-area="" asp-controller="Student" asp-action="Index">Applications</a>
+                                        <a class="dropdown-item" asp-area="" asp-controller="Product" asp-action="Index">Buy</a>
+                                        <a class="dropdown-item" asp-area="" asp-controller="Student" asp-action="GetTimetable" asp-route-type="Weekdays">Weekdays Timetable</a>
+                                        <a class="dropdown-item" asp-area="" asp-controller="Student" asp-action="GetTimetable" asp-route-type="Weekend">Weekend Timetable</a>
+                                        @if (DateOnly.FromDateTime(DateTime.Now) < SD.RegistrationDate)
+                                        {
+                                            <a class="dropdown-item" asp-area="" asp-controller="Registration" asp-action="Register">Registration</a>
+                                        }
+                                    </div>
                                 </li>
+                              
                             }
 
                         }
@@ -62,13 +83,11 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - Fundanathi - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

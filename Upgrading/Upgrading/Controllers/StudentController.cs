@@ -57,6 +57,35 @@ namespace Upgrading.Controllers
 
            
         }
+        public IActionResult AcceptedStudent()
+        {
+            var username = _usermanager.GetUserName(User);
+
+            ApplicationUser user = _unitOfWork.User.Get(x => x.UserName == username);
+            if (User.IsInRole(SD.Role_Admin))
+            {
+                var students = _unitOfWork.Student.GetAll(u=>u.Status==SD.StatuseApproved);
+                return View(students);
+            }
+            else
+            {
+
+                var students = _unitOfWork.Student.Get(u => u.StudentId == user.StudentId);
+                if (students == null)
+                {
+                    return RedirectToAction("Create", "Student");
+                }
+                else
+                {
+                    return View("StudentIndex", students);
+                }
+
+            }
+
+
+
+
+        }
         [HttpGet]
         public IActionResult Create()
         {
@@ -249,5 +278,97 @@ namespace Upgrading.Controllers
             return RedirectToAction(nameof(Index));
 
         }
+
+
+        //TimeTable actions
+        [HttpGet]
+        [Authorize(Roles = SD.Role_Admin)]
+        public IActionResult CreateTimetable()
+        {
+            return View();
+        }
+        [HttpPost]
+        [Authorize(Roles = SD.Role_Admin)]
+        public IActionResult CreateTimetable(TimeTable table)
+        {
+
+            if (table.Timetable != null)
+            {
+                string filename = Guid.NewGuid().ToString() + Path.GetExtension(table.Timetable.FileName);
+                string imagePath = Path.Combine(_webHostEnvironment.WebRootPath, @"timetable");
+
+                using var fileStream = new FileStream(Path.Combine(imagePath, filename), FileMode.Create);
+                table.Timetable.CopyTo(fileStream);
+
+                table.TimetableUrl = @"\timetable\" + filename;
+            }
+            _unitOfWork.Timetable.Add(table);
+            _unitOfWork.Save();
+            return RedirectToAction("ListTimetable", "Student");
+        }
+        [Authorize(Roles =SD.Role_Admin)]
+        public IActionResult ListTimetable()
+        {
+
+           var timetable=_unitOfWork.Timetable.GetAll();
+            return View(timetable);
+        }
+        [HttpGet]
+        [Authorize(Roles = SD.Role_Admin)]
+        public IActionResult DeleteTimetable(int id)
+        {
+            var timetable =_unitOfWork.Timetable.Get(u=>u.Id == id);
+            return View(timetable);
+        }
+        [HttpPost]
+        [Authorize(Roles = SD.Role_Admin)]
+        public IActionResult DeleteTimetable(TimeTable table)
+        {
+            TimeTable? timeFromDb= _unitOfWork.Timetable.Get(u=>u.Id==table.Id);
+            if(timeFromDb != null)
+            {
+                if (!string.IsNullOrEmpty(timeFromDb.TimetableUrl))
+                {
+                    var oldTimeTablePath = Path.Combine(_webHostEnvironment.WebRootPath, timeFromDb.TimetableUrl.TrimStart('\\'));
+                    if (System.IO.File.Exists(oldTimeTablePath))
+                    {
+                        System.IO.File.Delete(oldTimeTablePath);
+                    }
+                }
+                _unitOfWork.Timetable.Remove(timeFromDb);
+                _unitOfWork.Save();
+            }
+            return  RedirectToAction("ListTimetable", "Student");
+        }
+        public IActionResult GetTimetable(string type)
+        {
+            var time=_unitOfWork.Timetable.GetAll(u=>u.Type==type).First();
+            if (time is not null)
+            {
+                if (!string.IsNullOrEmpty(time.TimetableUrl))
+                {
+                    var oldTimetPath = Path.Combine(_webHostEnvironment.WebRootPath, time.TimetableUrl.TrimStart('\\'));
+                    if (System.IO.File.Exists(oldTimetPath))
+                    {
+                        byte[] fileBytes = System.IO.File.ReadAllBytes(oldTimetPath);
+                        string contentType = "application/octet-stream";
+                        return File(fileBytes, contentType, oldTimetPath);
+                    }
+                }
+                else
+                {
+                    // If the file doesn't exist, return a 404 Not Found response
+                    return NotFound();
+                }
+            }
+            else
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            return RedirectToAction(nameof(Index));
+          
+        }
+
+
     }
 }

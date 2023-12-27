@@ -18,6 +18,10 @@ namespace Upgrading.Repositories
 
         public IProduct Product { get; private set; }
 
+        public IRegistration Registration { get; private set; }
+
+        public ITimetable Timetable { get; private set; }
+
         public UnitOfWork(SQLiteDbContext db)
         {
             _db = db;
@@ -26,6 +30,8 @@ namespace Upgrading.Repositories
             Subject = new SubjectRepo(_db);
             Announcement = new AnnouncementRepo(_db);
             Product = new ProductRepo(_db);
+            Registration = new RegistrationRepo(_db);
+            Timetable = new TimetableRepo(_db);
         }
 
         public void Save()

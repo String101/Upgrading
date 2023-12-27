@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "essI62xjXmmXenIIMG0D7Sj8NCBcyr5Zdmesko0Gtvk=",
+  "Hash": "WI5DXgVDp1Qgx3HeDhPwmZXPE6dK0J/CB/e2KIzc66o=",
   "Source": "Upgrading",
   "BasePath": "_content/Upgrading",
   "Mode": "Default",
@@ -131,12 +131,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\ids\\studentsIdCopy\\c06eb5ed-e0fe-42a8-981a-0c0c30244c9a.pdf",
+      "Identity": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\ids\\studentsIdCopy\\151661e8-f52e-46f7-a26c-e0cf74c41f40.pdf",
       "SourceId": "Upgrading",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\",
       "BasePath": "_content/Upgrading",
-      "RelativePath": "ids/studentsIdCopy/c06eb5ed-e0fe-42a8-981a-0c0c30244c9a.pdf",
+      "RelativePath": "ids/studentsIdCopy/151661e8-f52e-46f7-a26c-e0cf74c41f40.pdf",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -147,26 +147,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\ids\\studentsIdCopy\\c06eb5ed-e0fe-42a8-981a-0c0c30244c9a.pdf"
-    },
-    {
-      "Identity": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\ids\\studentsIdCopy\\e1908b5f-05c5-47ea-b553-3713c67fb78a.pdf",
-      "SourceId": "Upgrading",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\",
-      "BasePath": "_content/Upgrading",
-      "RelativePath": "ids/studentsIdCopy/e1908b5f-05c5-47ea-b553-3713c67fb78a.pdf",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\ids\\studentsIdCopy\\e1908b5f-05c5-47ea-b553-3713c67fb78a.pdf"
+      "OriginalItemSpec": "wwwroot\\ids\\studentsIdCopy\\151661e8-f52e-46f7-a26c-e0cf74c41f40.pdf"
     },
     {
       "Identity": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\images\\logo.jpg",
@@ -186,6 +167,44 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\logo.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\images\\productsImages\\0112c094-0231-4cd5-af48-b06bf6a79781.png",
+      "SourceId": "Upgrading",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\",
+      "BasePath": "_content/Upgrading",
+      "RelativePath": "images/productsImages/0112c094-0231-4cd5-af48-b06bf6a79781.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\productsImages\\0112c094-0231-4cd5-af48-b06bf6a79781.png"
+    },
+    {
+      "Identity": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\images\\productsImages\\0c42f15b-23e6-49fe-9633-9332be1e2af8.jpg",
+      "SourceId": "Upgrading",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\",
+      "BasePath": "_content/Upgrading",
+      "RelativePath": "images/productsImages/0c42f15b-23e6-49fe-9633-9332be1e2af8.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\productsImages\\0c42f15b-23e6-49fe-9633-9332be1e2af8.jpg"
     },
     {
       "Identity": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\js\\site.js",
@@ -1290,12 +1309,12 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\statements\\ApplicantsMatricStatement\\498ec2f3-d6c3-4ad3-87d5-4a93c32edf4f.pdf",
+      "Identity": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\statements\\ApplicantsMatricStatement\\87839337-d1fd-403d-ab1d-b4790d2f06c3.pdf",
       "SourceId": "Upgrading",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\",
       "BasePath": "_content/Upgrading",
-      "RelativePath": "statements/ApplicantsMatricStatement/498ec2f3-d6c3-4ad3-87d5-4a93c32edf4f.pdf",
+      "RelativePath": "statements/ApplicantsMatricStatement/87839337-d1fd-403d-ab1d-b4790d2f06c3.pdf",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1306,15 +1325,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\statements\\ApplicantsMatricStatement\\498ec2f3-d6c3-4ad3-87d5-4a93c32edf4f.pdf"
+      "OriginalItemSpec": "wwwroot\\statements\\ApplicantsMatricStatement\\87839337-d1fd-403d-ab1d-b4790d2f06c3.pdf"
     },
     {
-      "Identity": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\statements\\ApplicantsMatricStatement\\d20ccc2b-d969-41a8-868c-d4044c9f9409.pdf",
+      "Identity": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\statements\\RegistrationPayment\\bba8caa9-2fdf-45ec-bcef-a41a6eae5468.pdf",
       "SourceId": "Upgrading",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\",
       "BasePath": "_content/Upgrading",
-      "RelativePath": "statements/ApplicantsMatricStatement/d20ccc2b-d969-41a8-868c-d4044c9f9409.pdf",
+      "RelativePath": "statements/RegistrationPayment/bba8caa9-2fdf-45ec-bcef-a41a6eae5468.pdf",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1325,7 +1344,45 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\statements\\ApplicantsMatricStatement\\d20ccc2b-d969-41a8-868c-d4044c9f9409.pdf"
+      "OriginalItemSpec": "wwwroot\\statements\\RegistrationPayment\\bba8caa9-2fdf-45ec-bcef-a41a6eae5468.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\timetable\\688ecbe7-4e46-4bac-8edb-ffa1cf6ac0ba.docx",
+      "SourceId": "Upgrading",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\",
+      "BasePath": "_content/Upgrading",
+      "RelativePath": "timetable/688ecbe7-4e46-4bac-8edb-ffa1cf6ac0ba.docx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\timetable\\688ecbe7-4e46-4bac-8edb-ffa1cf6ac0ba.docx"
+    },
+    {
+      "Identity": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\timetable\\ab85e484-f18f-461b-b464-249dfbb748a1.pdf",
+      "SourceId": "Upgrading",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\",
+      "BasePath": "_content/Upgrading",
+      "RelativePath": "timetable/ab85e484-f18f-461b-b464-249dfbb748a1.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\timetable\\ab85e484-f18f-461b-b464-249dfbb748a1.pdf"
     }
   ]
 }

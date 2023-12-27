@@ -7,6 +7,8 @@
         ISubject Subject { get; }
         IAnnouncement Announcement { get; }
         IProduct Product { get; }
+        IRegistration Registration { get; }
+        ITimetable Timetable { get; }
         void Save();
     }
 }

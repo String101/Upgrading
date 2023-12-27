@@ -15,6 +15,8 @@ namespace Upgrading.Data
         public DbSet<ApplicationUser> ApplicationUsers { get; set; } 
         public DbSet<Announcement> Announcements { get; set; }
         public DbSet<Products> Products { get; set; }
+        public DbSet<Registration> Registrations { get; set; }  
+        public DbSet<TimeTable> TimeTables { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

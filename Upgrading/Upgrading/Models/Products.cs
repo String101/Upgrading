@@ -12,8 +12,7 @@ namespace Upgrading.Models
         [Required]
         public string Description { get; set; } = string.Empty;
         [NotMapped]
-        public FormFile? Image { get; set; }
-        [Required]
+        public IFormFile? Image { get; set; }
         public string ImageUrl { get; set; } = string.Empty;
         [Required]
         [Display(Name = "Product Type")]

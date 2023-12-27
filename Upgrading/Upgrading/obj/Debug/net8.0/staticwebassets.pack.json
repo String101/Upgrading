@@ -13,16 +13,20 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\ids\\studentsIdCopy\\c06eb5ed-e0fe-42a8-981a-0c0c30244c9a.pdf",
-      "PackagePath": "staticwebassets\\ids\\studentsIdCopy\\c06eb5ed-e0fe-42a8-981a-0c0c30244c9a.pdf"
-    },
-    {
-      "Id": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\ids\\studentsIdCopy\\e1908b5f-05c5-47ea-b553-3713c67fb78a.pdf",
-      "PackagePath": "staticwebassets\\ids\\studentsIdCopy\\e1908b5f-05c5-47ea-b553-3713c67fb78a.pdf"
+      "Id": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\ids\\studentsIdCopy\\151661e8-f52e-46f7-a26c-e0cf74c41f40.pdf",
+      "PackagePath": "staticwebassets\\ids\\studentsIdCopy\\151661e8-f52e-46f7-a26c-e0cf74c41f40.pdf"
     },
     {
       "Id": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\images\\logo.jpg",
       "PackagePath": "staticwebassets\\images\\logo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\images\\productsImages\\0112c094-0231-4cd5-af48-b06bf6a79781.png",
+      "PackagePath": "staticwebassets\\images\\productsImages\\0112c094-0231-4cd5-af48-b06bf6a79781.png"
+    },
+    {
+      "Id": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\images\\productsImages\\0c42f15b-23e6-49fe-9633-9332be1e2af8.jpg",
+      "PackagePath": "staticwebassets\\images\\productsImages\\0c42f15b-23e6-49fe-9633-9332be1e2af8.jpg"
     },
     {
       "Id": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\js\\site.js",
@@ -257,12 +261,20 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\statements\\ApplicantsMatricStatement\\498ec2f3-d6c3-4ad3-87d5-4a93c32edf4f.pdf",
-      "PackagePath": "staticwebassets\\statements\\ApplicantsMatricStatement\\498ec2f3-d6c3-4ad3-87d5-4a93c32edf4f.pdf"
+      "Id": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\statements\\ApplicantsMatricStatement\\87839337-d1fd-403d-ab1d-b4790d2f06c3.pdf",
+      "PackagePath": "staticwebassets\\statements\\ApplicantsMatricStatement\\87839337-d1fd-403d-ab1d-b4790d2f06c3.pdf"
     },
     {
-      "Id": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\statements\\ApplicantsMatricStatement\\d20ccc2b-d969-41a8-868c-d4044c9f9409.pdf",
-      "PackagePath": "staticwebassets\\statements\\ApplicantsMatricStatement\\d20ccc2b-d969-41a8-868c-d4044c9f9409.pdf"
+      "Id": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\statements\\RegistrationPayment\\bba8caa9-2fdf-45ec-bcef-a41a6eae5468.pdf",
+      "PackagePath": "staticwebassets\\statements\\RegistrationPayment\\bba8caa9-2fdf-45ec-bcef-a41a6eae5468.pdf"
+    },
+    {
+      "Id": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\timetable\\688ecbe7-4e46-4bac-8edb-ffa1cf6ac0ba.docx",
+      "PackagePath": "staticwebassets\\timetable\\688ecbe7-4e46-4bac-8edb-ffa1cf6ac0ba.docx"
+    },
+    {
+      "Id": "C:\\Users\\thusi\\source\\repos\\Upgrading\\Upgrading\\Upgrading\\wwwroot\\timetable\\ab85e484-f18f-461b-b464-249dfbb748a1.pdf",
+      "PackagePath": "staticwebassets\\timetable\\ab85e484-f18f-461b-b464-249dfbb748a1.pdf"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Upgrading.Microsoft.AspNetCore.StaticWebAssets.props",

@@ -36,6 +36,9 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\ids\studentsIdCopy\" />
+    <Folder Include="wwwroot\images\productsImages\" />
+    <Folder Include="wwwroot\statements\RegistrationPayment\" />
+    <Folder Include="wwwroot\timetable\" />
     <Folder Include="wwwroot\statements\ApplicantsMatricStatement\" />
   </ItemGroup>
 
